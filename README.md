@@ -1,6 +1,12 @@
-## About this Book API
+## About this Book API Application
 
 The application shows a basic book api application made with Laravel backend. It has no frontend but the documentation is displayed on swagger documentation tool.
+
+## Live Link swagger documentation
+
+```
+https://glacial-ravine-24458.herokuapp.com/swagger/index.html
+```
 
 ## Setup
 
