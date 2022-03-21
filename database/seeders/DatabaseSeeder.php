@@ -23,6 +23,6 @@ class DatabaseSeeder extends Seeder
         \App\Models\Comment::factory(3)->create(['book_id'=>6]);
         \App\Models\Comment::factory(3)->create(['book_id'=>7]);
         \App\Models\Comment::factory(3)->create(['book_id'=>8]);
-        \App\Models\Comment::factory(3)->create(['book_id'=>9]);
+        \App\Models\Comment::factory(4)->create(['book_id'=>9]);
     }
 }
