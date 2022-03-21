@@ -1,6 +1,6 @@
 ## About this Book API
 
-The application shows a basic book api application made Laravel backend. It has no frontend but the documentation is displayed on swagger documentation tool.
+The application shows a basic book api application made with Laravel backend. It has no frontend but the documentation is displayed on swagger documentation tool.
 
 ## Setup
 
