@@ -14,11 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
-Route::middleware('guest:sanctum')->group(function () {
+Route::middleware('guest')->group(function () {
     Route::get('books', [App\Http\Controllers\BookController::class, 'index'])->name('books.list');
     Route::get('books/{book}', [App\Http\Controllers\BookController::class, 'show'])->name('books.show');
     Route::get('books/{book}/comments', [App\Http\Controllers\CommentController::class, 'index'])->name('comments.list');
