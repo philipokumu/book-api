@@ -16,7 +16,7 @@ git clone https://github.com/philipokumu/book-api.git
 cd book-api
 ```
 
-2. Install backend dependencies
+2. Install dependencies
 
 ```
 composer install
