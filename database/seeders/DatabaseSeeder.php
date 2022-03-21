@@ -18,5 +18,11 @@ class DatabaseSeeder extends Seeder
         \App\Models\Comment::factory(3)->create(['book_id'=>1]);
         \App\Models\Comment::factory(3)->create(['book_id'=>2]);
         \App\Models\Comment::factory(3)->create(['book_id'=>3]);
+        \App\Models\Comment::factory(3)->create(['book_id'=>4]);
+        \App\Models\Comment::factory(3)->create(['book_id'=>5]);
+        \App\Models\Comment::factory(3)->create(['book_id'=>6]);
+        \App\Models\Comment::factory(3)->create(['book_id'=>7]);
+        \App\Models\Comment::factory(3)->create(['book_id'=>8]);
+        \App\Models\Comment::factory(3)->create(['book_id'=>9]);
     }
 }
