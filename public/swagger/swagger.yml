@@ -1,0 +1,130 @@
+openapi: 3.0.0
+# https://petstore3.swagger.io/api/v3/openapi.json
+info:
+  title: Book API - Documentation
+  #  description: Book APIs.
+  version: 1.0.0
+
+tags:
+  - name: Books
+    description: Books Api endpoint
+  - name: Comments
+    description: Comments Api endpoint
+
+paths:
+  /api/books:
+    get:
+      tags:
+        - Books
+      summary: List all books
+      operationId: books-listing
+      responses:
+        200:
+          description: OK
+        404:
+          description: Page not found
+        422:
+          description: Unprocessable Entity
+        500:
+          description: Internal server error
+
+  /api/books/{book_id}:
+    get:
+      tags:
+        - Books
+      summary: Fetch a book. In the link https://anapioficeandfire.com/ there are only 9 books so book id should be from 1 to 9
+      operationId: books-read
+      parameters:
+        - in: path
+          name: book_id
+          required: true
+          schema:
+            type: string
+
+      responses:
+        200:
+          description: OK
+        404:
+          description: Page not found
+        422:
+          description: Unprocessable Entity
+        500:
+          description: Internal server error
+
+  /api/books/{book_id}/comments:
+    post:
+      tags:
+        - Comments
+      summary: Create a comment for a book
+      operationId: comment-create
+      parameters:
+        - in: path
+          name: book_id
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              required:
+                - text
+              properties:
+                text:
+                  type: string
+                  description: Comment text
+                  example: This is a wonderful book
+              type: object
+
+    get:
+      tags:
+        - Comments
+      summary: Fetch all comments for a book
+      operationId: comments-read
+      parameters:
+        - in: path
+          name: book_id
+          required: true
+          schema:
+            type: string
+
+      responses:
+        200:
+          description: OK
+        201:
+          description: Added
+        404:
+          description: Page not found
+        422:
+          description: Unprocessable Entity
+        500:
+          description: Internal server error
+
+  /api/books/{book_id}/comments/{comment_id}:
+    delete:
+      tags:
+        - Comments
+      summary: Delete a comment for a book
+      operationId: comment-delete
+      parameters:
+        - in: path
+          name: book_id
+          required: true
+        - in: path
+          name: comment_id
+          required: true
+          schema:
+            type: string
+
+      responses:
+        200:
+          description: OK
+        204:
+          description: Deleted
+        404:
+          description: Page not found
+        422:
+          description: Unprocessable Entity
+        500:
+          description: Internal server error
